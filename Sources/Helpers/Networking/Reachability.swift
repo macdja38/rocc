@@ -27,7 +27,7 @@ public final class Reachability {
     /// A closure called when the SSID the local device is connected to changes
     public var networkChangeCallback: ((_ ssid: String?) -> Void)?
     
-    #if os(iOS)
+    #if os(iOS) || os(visionOS)
     /// The SSID the local device is connected to
     public static var currentWiFiSSID: String? {
         guard let interfaces = CNCopySupportedInterfaces() as? [CFString] else { return nil }

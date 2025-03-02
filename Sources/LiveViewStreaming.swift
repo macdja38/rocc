@@ -177,7 +177,7 @@ public final class LiveViewStream: NSObject {
     /// Performs all setup of the live view stream and begins streaming images over the network
     public func start() {
         
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
         guard camera as? DummyCamera == nil else {
             if let image = UIImage(named: "test_image", in: .main, compatibleWith: nil) {
                 delegate?.liveViewStream(self, didReceive: image)

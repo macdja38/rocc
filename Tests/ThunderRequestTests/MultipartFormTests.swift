@@ -10,7 +10,7 @@ import XCTest
 import Foundation
 @testable import ThunderRequest
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 let expectedImageSize = CGSize(width: 350, height: 150)
 #elseif os(macOS)
 let expectedImageSize = CGSize(width: 262.5, height: 112.5)
@@ -48,7 +48,7 @@ class MultipartFormTests: XCTestCase {
             fatalError("Couldn't create image from test image file")
         }
         
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
         let endStringRange = 8193...8203
         let imageRange = 145...8192
         let dataLength = 8204
@@ -141,7 +141,7 @@ class MultipartFormTests: XCTestCase {
             fatalError("Couldn't create image from test image file")
         }
         
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
         let endStringRange = 8190...8200
         let imageRange = 142...8189
         let dataLength = 8201
@@ -182,7 +182,7 @@ class MultipartFormTests: XCTestCase {
         
         let imageMultiPartData = imageFile?.multipartDataWith(boundary: "ABCDEFG", key: "image")
         
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
         let endStringRange: ClosedRange<Int>
         let imageRange: ClosedRange<Int>
         let dataLength: Int
@@ -235,7 +235,7 @@ class MultipartFormTests: XCTestCase {
         
         let payload = formBody.payload()
         
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
         let dataLength: Int
         if #available(iOS 13.0, *) {
             dataLength = 10223

@@ -119,7 +119,7 @@ class UDPDeviceDiscoverer: DeviceDiscoverer {
             })
         }
         
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
         guard isReachable else {
             
             Logger.log(message: "Device not reachable", category: "UDPDeviceDiscoverer", level: .debug)

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 threesidedcube. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 #elseif os(macOS)
 import AppKit
